@@ -1,0 +1,27 @@
+<div class="main-container">
+            <div class="container">
+              
+              <div style="text-align:center" class="container">
+                  <h1>Welcome</h1>
+              </div>
+              <div class="row">
+                <div *ngFor="let car of carousel" class="col-md-4">
+                  <div style="text-align:center"  class="card mb-4 box-shadow">
+                    <a href="#"><img style="height:380px;" class="card-img-top" data-src="{{car.image}}" alt="Card image cap"></a> 
+                    <div class="card-body">
+                      <h3 class="card-text">{{car.name}}</h3>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Details</button>
+                        </div>
+                        <small class="text-muted">Rateing: <code>{{car.rate}}</code></small>
+                        <small class="text-muted">Release Date: {{car.date}}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+    
+</div>
