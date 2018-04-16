@@ -16,7 +16,7 @@ export class MainCarouselComponent implements OnInit {
   public carousel:Carousel[] = [];
   list = [1,2,3];
   image:string;
-  constructor(private moviesService:MoviesService) { 
+  constructor(private moviesService:MoviesService) {
   }
 
   getList(){
@@ -46,10 +46,10 @@ export class MainCarouselComponent implements OnInit {
                     }
                     );
                   console.log(this.carousel);
-                  //this.image = movieData.poster_path;
-                })  
+                  
+                })
           }
-          
+
 
         })
   }
