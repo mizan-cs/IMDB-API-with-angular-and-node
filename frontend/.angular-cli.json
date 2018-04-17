@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "project"
+    "name": "frontend"
   },
   "apps": [
     {
@@ -23,18 +23,19 @@
         "../node_modules/bootstrap/assets/css/socicon.css",
         "../node_modules/bootstrap/assets/css/entypo.css",
         "../node_modules/bootstrap/assets/css/theme.css"
+
       ],
       "scripts": [
-        "../node_modules/bootstrap/jquery/jquery-3.2.1.slim.min.js",
-        "../node_modules/bootstrap/cdnjs/ajax/libs/popper.js/1.13.0/umd/popper.min.js",
-        "../node_modules/bootstrap/assets/js/jquery.smartWizard.min.js",
-        "../node_modules/bootstrap/cdnjs/ajax/libs/flickity/2.0.10/flickity.pkgd.min.js",
-        "../node_modules/bootstrap/assets/js/scrollMonitor.js",
-        "../node_modules/bootstrap/cdnjs/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.polyfills.min.js",
-        "../node_modules/bootstrap/cdnjs/ajax/libs/prism/1.10.0/prism.min.js",
-        "../node_modules/bootstrap/assets/js/zoom.min.js",
-        "../node_modules/bootstrap/cdnjs/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js",
-        "../node_modules/bootstrap/assets/js/theme.js"
+          "../node_modules/bootstrap/jquery/jquery-3.2.1.slim.min.js",
+          "../node_modules/bootstrap/cdnjs/ajax/libs/popper.js/1.13.0/umd/popper.min.js",
+          "../node_modules/bootstrap/assets/js/jquery.smartWizard.min.js",
+          "../node_modules/bootstrap/cdnjs/ajax/libs/flickity/2.0.10/flickity.pkgd.min.js",
+          "../node_modules/bootstrap/assets/js/scrollMonitor.js",
+          "../node_modules/bootstrap/cdnjs/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.polyfills.min.js",
+          "../node_modules/bootstrap/cdnjs/ajax/libs/prism/1.10.0/prism.min.js",
+          "../node_modules/bootstrap/assets/js/zoom.min.js",
+          "../node_modules/bootstrap/cdnjs/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js",
+          "../node_modules/bootstrap/assets/js/theme.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

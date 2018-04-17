@@ -1,5 +1,5 @@
 /**
- * @license Angular v5.2.9
+ * @license Angular v5.2.10
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -217,6 +217,7 @@ MissingTranslationStrategy[MissingTranslationStrategy.Warning] = "Warning";
 MissingTranslationStrategy[MissingTranslationStrategy.Ignore] = "Ignore";
 /**
  * @record
+ * @template T
  */
 function MetadataFactory() { }
 /**
@@ -581,7 +582,7 @@ class Version {
 /**
  * \@stable
  */
-const VERSION = new Version('5.2.9');
+const VERSION = new Version('5.2.10');
 
 /**
  * @fileoverview added by tsickle
@@ -1908,6 +1909,7 @@ function templateJitUrl(ngModuleType, compMeta) {
  * The path to the node at offset 9 would be `['+' at 1-10, '+' at 7-10,
  * 'c' at 9-10]` and the path the node at offset 1 would be
  * `['+' at 1-10, 'a' at 1-2]`.
+ * @template T
  */
 class AstPath {
     /**
@@ -9615,7 +9617,7 @@ class Declaration {
     constructor(unescapedAttrs) {
         this.attrs = {};
         Object.keys(unescapedAttrs).forEach((k) => {
-            this.attrs[k] = _escapeXml(unescapedAttrs[k]);
+            this.attrs[k] = escapeXml(unescapedAttrs[k]);
         });
     }
     /**
@@ -9650,7 +9652,7 @@ class Tag {
         this.children = children;
         this.attrs = {};
         Object.keys(unescapedAttrs).forEach((k) => {
-            this.attrs[k] = _escapeXml(unescapedAttrs[k]);
+            this.attrs[k] = escapeXml(unescapedAttrs[k]);
         });
     }
     /**
@@ -9663,7 +9665,7 @@ class Text$2 {
     /**
      * @param {?} unescapedValue
      */
-    constructor(unescapedValue) { this.value = _escapeXml(unescapedValue); }
+    constructor(unescapedValue) { this.value = escapeXml(unescapedValue); }
     /**
      * @param {?} visitor
      * @return {?}
@@ -9687,7 +9689,7 @@ const _ESCAPED_CHARS = [
  * @param {?} text
  * @return {?}
  */
-function _escapeXml(text) {
+function escapeXml(text) {
     return _ESCAPED_CHARS.reduce((text, entry) => text.replace(entry[0], entry[1]), text);
 }
 
@@ -11111,7 +11113,11 @@ class I18nToHtmlVisitor {
      * @param {?=} context
      * @return {?}
      */
-    visitText(text, context) { return text.value; }
+    visitText(text, context) {
+        // `convert()` uses an `HtmlParser` to return `html.Node`s
+        // we should then make sure that any special characters are escaped
+        return escapeXml(text.value);
+    }
     /**
      * @param {?} container
      * @param {?=} context
@@ -27048,10 +27054,12 @@ function createAotCompiler(compilerHost, options, errorCollector) {
  */
 /**
  * @record
+ * @template T
  */
 
 /**
  * @abstract
+ * @template T
  */
 class SummaryResolver {
 }

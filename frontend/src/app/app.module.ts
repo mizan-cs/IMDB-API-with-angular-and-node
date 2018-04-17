@@ -1,29 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpModule} from '@angular/http';
-import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
-import { MainCarouselComponent } from './main-carousel/main-carousel.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardHeaderComponent } from './card-header/card-header.component';
+import { ContentComponent } from './content/content.component';
+import { CardArciveComponent } from './card-arcive/card-arcive.component';
+import { CardCategoryComponent } from './card-category/card-category.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainCarouselComponent,
-    MovieListComponent,
-    FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardHeaderComponent,
+    ContentComponent,
+    CardArciveComponent,
+    CardCategoryComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule,
-    HttpClientModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

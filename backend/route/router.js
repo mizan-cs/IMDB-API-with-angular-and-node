@@ -4,7 +4,7 @@ var router = express.Router();
 var movie  =require('../model/movie.js');
 module.exports = router;
 
-//All API Router files
+//All API Router
 
 /*
     slice movies array in
