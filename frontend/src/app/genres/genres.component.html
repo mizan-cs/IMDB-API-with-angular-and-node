@@ -1,0 +1,29 @@
+<div class="card card-sm">
+
+  <div *ngFor="let movie of pageItems; let i=index "  class="list-group list-group-flush">
+    <div *ngIf="i<3" class="card-header d-flex justify-content-between">
+      <div>
+        <span class="h6"> {{movie[0]}}</span>
+      </div>
+      <a routerLink="{{movie[2]}}">View all &rsaquo;</a>
+    </div>
+      <div *ngIf="i<3" class="card-group">
+        <div *ngFor="let mv of movie[1]" class="card">
+          <a routerLink="{{movie[2]}}/{{mv.id}}">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/w200{{mv.poster_path}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 style="text-align:center" class="card-title">{{mv.original_title}}</h5>
+            </div>
+          </a>
+        </div>
+    </div>
+    <br *ngIf="i<3">
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+
+  <ngb-pagination [collectionSize]="totalItems" [pageSize]="itemsPerPage" [(page)]="page" [maxSize]="7" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+
+</div>
+

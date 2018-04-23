@@ -1,0 +1,46 @@
+
+  <div class="row justify-content-center">
+    <figure class="figure">
+      <img alt="Image" src="https://image.tmdb.org/t/p/w300{{movie_data.poster_path}}" class="figure-image img-fluid rounded" />
+    </figure>
+  </div>
+  <div class="row justify-content-center text-center section-intro">
+        <h2 class="display-4">{{movie_data.original_title}}</h2>
+        <span class="lead">{{movie_data.overview}}</span>
+    </div>
+
+
+    <div class="row justify-content-center">
+      <a href="https://www.imdb.com/title/{{movie_data.imdb_id}}/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=12230b0e-0e00-43ed-9e59-8d5353703cce&pf_rd_r=SNHRTPPWEMFRKY2S5G9G&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=toptv&ref_=chttvtp_tt_1" target="_blank">
+      <figure class="figure">
+        <img style="width: 100px;height: 70px" alt="Image" src="https://images-fe.ssl-images-amazon.com/images/I/21%2BOVqzNo7L.png" class="figure-image img-fluid rounded" />
+      </figure>
+      </a>
+    </div>
+
+    <div class="row justify-content-center">
+      <span class="h5 text-pink">Rating: {{movie_data.vote_average}}</span>
+    </div>
+
+
+<section class="flush-with-above">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-auto">
+        <h4>Related Movies</h4>
+      </div>
+    </div>
+    <div class="row no-gutters justify-content-center">
+      <div class="col-12 col-lg-10">
+        <ul class="feature-list row justify-content-center">
+          <li *ngFor="let related of relateds_data" class="col-6 col-lg-4">
+            <a [routerLink]="['/movies/',genres_id,related.id]" >
+              <img alt="Image" src="https://image.tmdb.org/t/p/w200{{related.poster_path}}" class="img-fluid rounded mb-3" />
+              <h5 class="mb-0">{{related.original_title}}</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

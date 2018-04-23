@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 var movie  =require('../model/movie.js');
@@ -6,14 +5,15 @@ module.exports = router;
 
 //All API Router
 
-/*
-    slice movies array in
-    url pattart = http://hostname/api/movies/genre/begin/end
-    genre = this wil get a genre name
-    begin = this will get an number. begin params is a starting point of this array
-    end = this will get an number. end params is a ending point of this array
+router.get('/movies/genres', (req, res, next)=>{
 
-*/
+    res.send(movie.getGenrisWithRandomMovies());
+});
+
+router.get('/movies/random/:genre', (req, res, next)=>{
+
+    res.send(movie.getRandomGenreMovies(req.params.genre));
+});
 
 
 router.get('/movies/:genre/:begin/:end', (req, res, next)=>{
@@ -26,14 +26,7 @@ router.get('/movies/:genre', (req, res, next)=>{
     res.send(movie.MoviesAllByGenres(req.params.genre));
 });
 
-/*
-    get random movies
-    url pattart = http://hostname/api/movies/random/genre/amount
-    genre = this wil get a genre name
-    amount = this is a number. this api will return 'number' random movies array
+router.get('/test', (req, res, next)=>{
 
-*/
-router.get('/movies/random/:genre', (req, res, next)=>{
-
-    res.send(movie.RandomMoviesByGenres(req.params.genre));
+    res.send(movie.GetGenresList());
 });
