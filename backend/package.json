@@ -9,11 +9,11 @@
   "author": "Mizan",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "convert-csv-to-json": "0.0.13",
     "cors": "^2.8.4",
     "csvtojson": "^1.1.9",
-    "express": "^4.16.3",
+    "express": "^4.18.2",
     "node-rest-client": "^3.1.0",
     "nodemon": "^1.17.3",
     "request": "^2.85.0",
